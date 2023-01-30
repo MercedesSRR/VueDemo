@@ -26,7 +26,13 @@ const router = createRouter({
         },{
             path:"/test",
             name:"Test",
+            //makes it dinamic -> doesn't load until you catually click the tab
             component: () => import('@/routes/TestView.vue')
+        },{
+            path:"/chart",
+            name:"Chart",
+            //makes it dinamic -> doesn't load until you catually click the tab
+            component: () => import('@/routes/ChartView.vue')
         }
     ]
 });

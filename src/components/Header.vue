@@ -11,18 +11,16 @@ Copyright (c) 2022-2023. Kibble Game Studios Inc. All Rights Reserved.
 
         constructor( name, subComponentList = []) {
             super( name, subComponentList );
-            this.vm = {
-                subtitle: "by Backflipping Nuns",
-            }
             this.props = {
-                title: String
+                title: String,
+                subtitle: String,
             }
 
             this.injectStore( useInfoStore );
         }
     }
 
-    export default new HeaderController('VFSHeader');
+    export default new HeaderController('RollerHeader');
 
 </script>
 <template>
@@ -30,11 +28,10 @@ Copyright (c) 2022-2023. Kibble Game Studios Inc. All Rights Reserved.
     <section class="container left">
         <img alt="Backflipping Nuns Logo" class="logo" src="@/assets/Images/LogoBackflippingNuns.jfif" width="125" height="125" @click="$router.push('/')"/>
         <div class="title item">
-            <h1>Roller Crashers</h1>
+            <h1>{{title}}</h1>
             <h4>{{ subtitle }} {{ infoStore.version }}</h4>
             <button @click="infoStore.increment()">ADD VERSION</button>
         </div>
-        <img alt="RollerCrasher Image" class="logo" src="@/assets/Images/RCcharacter.png" width="130" height="110" @click="$router.push('/')"/>
         <slot class="item"></slot>
     </section>
 

@@ -9,15 +9,12 @@
             super( name, subComponentList );
             this.vm = {
                 formData: {
-                    textForm: "",
-                    numberForm: 1,
+                    numberForm1: 1,
+                    numberForm2: 1,
                 }
             }
 
             this.props = {
-                hits: Number,
-                time: Number,
-                pickups: [],
             }
         }
 
@@ -32,16 +29,15 @@
 </script>
 
 <template>
+    <!--name of component-->
     <section class="flexbox columns test">
         <div class="flexitem dialog">
             <form class="sample-form">
-                <label for="s1">Event:
-                    <!-- Slot -->
-                    <slot></slot>
-                    <input name="s1" v-model="formData.textForm">
+                <label for="s1">Respawn time:
+                    <input name="s1" v-model="formData.numberForm1">
                 </label><br/>
-                <label for="s2">Variable:
-                    <input name="s2" v-model="formData.textForm">
+                <label for="s2">Number of lifes:
+                    <input name="s2" v-model="formData.numberForm2">
                 </label><br/>
                 <button @click="Submit()" value="Submit" class="">SAVE</button>
             </form>

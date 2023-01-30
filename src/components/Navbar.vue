@@ -19,7 +19,8 @@
                     { path:"/", section: "HOME" },
                     { path:"/about", section: "ABOUT" },
                     { path:"/info", section: "INFO" },
-                    { path:"/test", section: "TEST" }
+                    { path:"/test", section: "TEST" },
+                    { path:"/chart", section: "CHART"}
                 ]
             }
 
@@ -28,7 +29,7 @@
         }
     }
 
-    export default new NavbarController('VFSNavbar');
+    export default new NavbarController('RollerNavbar');
 
 </script>
 <template>

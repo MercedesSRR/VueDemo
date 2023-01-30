@@ -2,21 +2,52 @@
 
 import { RouterLink, RouterView } from 'vue-router'
 
-import VFSHeader from '@/components/Header.vue'
-import VFSNavbar from '@/components/Navbar.vue'
+import RollerHeader from '@/components/Header.vue'
+import RollerNavbar from '@/components/Navbar.vue'
+import VFSTunablePanel from '@/components/TunablePanel.vue'
 
 // todo import appInfoStore
+
+import Controller from '@/plugins/controller'
+
+    class AppController extends Controller {
+
+        constructor( name, subComponentList = []) {
+            super( name, subComponentList )
+            this.vm = {}
+            this.props = {}
+            this.emits = []
+            //this.injectGetters([/* List of names in array */]);
+            //this.injectActions(['actionMethod','anotherAction'])
+        }
+    }
+
+    const app = new AppController('VFSApp', {
+        RollerHeader,
+        RollerNavbar,
+        VFSTunablePanel
+    });
 
 </script>
 <template>
 
     <header class="wrapper container columns">
-        <VFSHeader title="A sample app" />
-        <VFSNavbar />
+        <RollerHeader title="Roller Crashers" subtitle="by Backflipping Nuns">
+            <!--replacing the slot component-->
+            <img alt="RollerCrasher Image" class="logo" src="@/assets/Images/RCcharacter.png" width="130" height="110" @click="$router.push('/')"/>
+        </RollerHeader>
+        <RollerNavbar />
     </header>
     <main>
         <RouterView />
+        <aside class="small-item">
+            <VFSTunablePanel title="Game Variables" />
+        </aside>
     </main>
+
+    <footer>
+        Copyright 2023 Mercedes Senties
+    </footer>
 
 </template>
 <style>

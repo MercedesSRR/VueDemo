@@ -16,7 +16,7 @@
 }
 
 .container.columns {
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-direction: column;
 }
 
