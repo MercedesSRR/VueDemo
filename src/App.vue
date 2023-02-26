@@ -34,7 +34,7 @@ import Controller from '@/plugins/controller'
     <header class="wrapper container columns">
         <RollerHeader title="Roller Crashers" subtitle="by Backflipping Nuns">
             <!--replacing the slot component-->
-            <img alt="RollerCrasher Image" class="logo" src="@/assets/Images/RCcharacter.png" width="130" height="110" @click="$router.push('/')"/>
+            <!--<img alt="RollerCrasher Image" class="logo" src="@/assets/Images/RCcharacter.png" width="130" height="110" @click="$router.push('/')"/>-->
         </RollerHeader>
         <RollerNavbar />
     </header>

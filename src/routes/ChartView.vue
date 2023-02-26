@@ -3,7 +3,7 @@
 <script>
     import Controller from '@/plugins/controller'
     //import TunablePanel from '../components/TunablePanel.vue'
-    import VFSbarChart from '../components/BarChart.vue'
+    import VFSBarChart from '../components/BarChart.vue'
 
     class ChartController extends Controller {
 

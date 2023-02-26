@@ -2,6 +2,8 @@
 
 <script>
     import Controller from '@/plugins/controller'
+    //import VFSBarChart from '../components/BarChart.vue'
+    import { Bar } from 'vue-chartjs'
 
     class TestController extends Controller {
 
@@ -11,7 +13,24 @@
                 formData: {
                     numberForm1: 1,
                     numberForm2: 1,
-                }
+                },
+
+                chartOptions: {
+                    responsive: true
+                },
+                chartData: {
+                    labels: ['Delta Time', 'X', 'Y', 'Z', 'Action'],
+                    datasets: [
+                        { data: [12345, 100, 100, 10, 1]},
+                    ]
+                },
+                data: [{
+                        x: 100, y: 100, z: 10,
+                        action: 1,
+                        time: 12345,
+                    },
+                ],
+                visible: true,
             }
 
             this.props = {
@@ -24,7 +43,7 @@
         }
     }
 
-    export default new TestController('Test');
+    export default new TestController('Test', {Bar});
 
 </script>
 
@@ -45,10 +64,10 @@
     </section>
     <section class="charts section test">
         <div class="chart bar">
-            
+            <!--<VFSBarChart :title="name" v-show="visible"/>-->
+            <Bar id="my-chart-id" :options="chartOptions" :data="chartData"/>
         </div>
-        <div class="chart lines">
-            
+        <div class="chart lines">      
         </div>
         <div class="chart pie">
             
